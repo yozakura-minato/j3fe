@@ -1,0 +1,11 @@
+###
+# @name GET test
+GET http://localhost:8080/api/mock
+Accept: application/json
+
+###
+# @name POST test
+POST http://localhost:8080/api/mock
+Content-Type: application/json
+
+{ "name": "Yozakura Minato" }
