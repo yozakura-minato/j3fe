@@ -1,36 +1,39 @@
 # J3FE - JOHO3 FRONTEND
 
-> **JOHO3** is a web application help user to create and use their **simple** personal workspace.
+> **JOHO3** is a web application for **simple** personal workspaces with texts and links.
 >
 > Reference: [`JOHO3 BACKEND`](https://github.com/yozakura-minato/j3be)
 
 ## Techniques
 
-[![My Skills](https://skillicons.dev/icons?i=svelte,ts,tailwind)](https://skillicons.dev)
+![My Skills](https://skillicons.dev/icons?i=svelte,ts,tailwind)
 
-- [`Svelte`](https://svelte.dev/docs/svelte/overview)/[`SvelteKit`](https://svelte.dev/docs/kit/introduction) in [`TypeScript`](https://www.typescriptlang.org/docs/)
-- [`Tailwind CSS`](https://tailwindcss.com/docs/installation/using-vite) for UI & styling, [`Phosphor Svelte`]([https://lucide.dev/guide/svelte/](https://www.npmjs.com/package/phosphor-svelte)) for icons
+- [`Svelte`](https://svelte.dev/docs/svelte/overview)/[`SvelteKit`](https://svelte.dev/docs/kit/introduction) in [`TypeScript`](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [`Tailwind CSS`](https://tailwindcss.com/docs/installation/using-vite) for UI & styling, [`Phosphor Svelte`](https://phosphoricons.com/) for icons
 - [`Svelte Sooner`](https://github.com/wobsoriano/svelte-sonner) for toast
 - [`Valibot`](https://valibot.dev/guides/introduction/) for validation
-- [`Ky`](https://www.npmjs.com/package/ky) for HTTP client
+- [`Ky`](https://github.com/sindresorhus/ky#readme) for HTTP client
+
+## Dev Tools
+![My Skills](https://skillicons.dev/icons?i=webstorm,pnpm,vite)
+- [`WebStorm`](https://www.jetbrains.com/webstorm/buy) (non-commercial edition) for IDE, HTTP test & datasource viewing
+- [`pnpm`](https://pnpm.io/motivation) for dependency management
+- [`Vite`](https://vite.dev/guide/) for build tool
 
 ## Getting Started
-
-[![My Skills](https://skillicons.dev/icons?i=webstorm,pnpm)](https://skillicons.dev)
-
 1. Clone this project into your device.
 2. Open your project with `WebStorm` IDE.
-3. Create `.env` file (see [`.env.example`](.env.example) for reference)
-4. Download dependencies with `pnpm`.
+3. Create **.env** file (see [`.env.example`](.env.example) for reference)
+4. Download dependencies.
 
 ```shell
-    pnpm i
+    pn i
 ```
 
-5. Then, start your local **J3FE**.
+5. Start your local **J3FE**.
 
 ```shell
-    pnpm run dev
+    vite dev
 ```
 
-6. Your local **J3FE** is now running at http://localhost:5173/.
+6. Your local **J3FE** is now running at http://localhost:5173.
