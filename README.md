@@ -2,7 +2,7 @@
 
 > **JOHO3** is a web application for **simple** personal workspaces with texts and links.
 >
-> Reference: [`JOHO3 BACKEND`](https://github.com/yozakura-minato/j3be)
+> Reference: [`JOHO3 BACKEND`](https://github.com/yozakura-minato/j3be) [`Ticket Board`](https://github.com/users/yozakura-minato/projects/5/views/7)
 
 ## Techniques
 
