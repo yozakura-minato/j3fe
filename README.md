@@ -15,25 +15,28 @@
 - [`Ky`](https://github.com/sindresorhus/ky#readme) for HTTP client
 
 ## Dev Tools
+
 ![My Skills](https://skillicons.dev/icons?i=webstorm,pnpm,vite)
+
 - [`WebStorm`](https://www.jetbrains.com/webstorm/buy) (non-commercial edition) for IDE, HTTP test & datasource viewing
 - [`pnpm`](https://pnpm.io/motivation) for dependency management
 - [`Vite`](https://vite.dev/guide/) for build tool
 
 ## Getting Started
+
 1. Clone this project into your device.
 2. Open your project with `WebStorm` IDE.
 3. Create **.env** file (see [`.env.example`](.env.example) for reference)
 4. Download dependencies.
 
 ```shell
-    pn i
+pn i
 ```
 
 5. Start your local **J3FE**.
 
 ```shell
-    vite dev
+vite dev
 ```
 
 6. Your local **J3FE** is now running at http://localhost:5173.
