@@ -42,3 +42,17 @@ Content-Type: {{JSON}}
         client.assert(response.body.error === "page.displayPath.notFound");
     });
 %}
+
+### getPageByPath_pageAccessIsNotPublic
+GET {{HOST}}/api/v1/pages?host=system&page=private
+Content-Type: {{JSON}}
+
+> {%
+    client.test("SHOULD return error WHEN host access is not Public", () => {
+        client.assert(response.status === 403);
+
+        client.assert(response.body.data === null);
+
+        client.assert(response.body.error === "page.access.denied");
+    });
+%}
