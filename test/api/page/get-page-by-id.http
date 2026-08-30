@@ -1,0 +1,30 @@
+### getPageById_success
+GET {{HOST}}/api/v1/pages/01a04d03-d857-7542-ace1-ed3142b919e5
+Content-Type: {{JSON}}
+
+> {%
+    client.test("SHOULD return page data WHEN page ID is valid", () => {
+        client.assert(response.status === 200);
+
+        client.assert(response.body.data !== null);
+        client.assert(response.body.error === null);
+
+        client.assert(response.body.data.hostPath !== null);
+        client.assert(response.body.data.pageProfile !== null);
+        client.assert(response.body.data.pageContents !== null);
+    })
+%}
+
+### getPageById_pageProfileNotFound
+GET {{HOST}}/api/v1/pages/12345678-1234-1234-1234-123456789012
+Content-Type: {{JSON}}
+
+> {%
+    client.test("SHOULD return error WHEN page ID does not exists", () => {
+        client.assert(response.status === 404);
+
+        client.assert(response.body.data === null);
+
+        client.assert(response.body.error === "page.id.notFound");
+    })
+%}

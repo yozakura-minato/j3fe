@@ -1,0 +1,37 @@
+### createPage_success
+POST {{HOST}}/api/v1/pages
+Content-Type: {{JSON}}
+
+{
+  "displayPath": "test-path",
+  "title": "Test title",
+  "description": "Test description.",
+  "access": "PUBLIC"
+}
+
+> {%
+    client.test("SHOULD return created success WHEN request is valid", () => {
+        client.assert(response.status === 201);
+    });
+%}
+
+### createPage_displayPathConflict
+POST {{HOST}}/api/v1/pages
+Content-Type: {{JSON}}
+
+{
+  "displayPath": "test-path",
+  "title": "Test title",
+  "description": "Test description.",
+  "access": "PUBLIC"
+}
+
+> {%
+    client.test("SHOULD return  error WHEN display path is conflict", () => {
+        client.assert(response.status === 409);
+
+        client.assert(response.body.error === "page.displayPath.conflict");
+
+        client.assert(response.body.data === null);
+    });
+%}
