@@ -1,0 +1,38 @@
+### updatePage_success
+POST {{HOST}}/api/v1/pages/01a06575-9508-70fd-9a7c-06ff6db9518e
+Content-Type: {{JSON}}
+
+{
+  "displayPath": "test-path-updated",
+  "title": "Test title (UPDATED)",
+  "description": "Test description. (UPDATED)",
+  "access": "PRIVATE"
+}
+
+> {%
+    client.test("SHOULD return success WHEN using valid page data", () => {
+        client.assert(response.status === 200);
+        client.assert(response.body === null);
+    });
+
+%}
+
+### updatePage_pageIdNotFound
+POST {{HOST}}/api/v1/pages/{{BAD_UUID}}
+Content-Type: {{JSON}}
+
+{
+  "displayPath": "test-path",
+  "title": "Test title",
+  "description": "Test description.",
+  "access": "PUBLIC"
+}
+
+> {%
+    client.test("SHOULD return error WHEN page ID not found", () => {
+        client.assert(response.status === 404);
+        client.assert(response.body.data === null);
+        client.assert(response.body.error === "page.id.notFound");
+    });
+
+%}
