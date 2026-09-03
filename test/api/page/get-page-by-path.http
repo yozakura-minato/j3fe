@@ -6,12 +6,13 @@ Content-Type: {{JSON}}
     client.test("SHOULD return page data WHEN request is valid", () => {
         client.assert(response.status === 200);
 
+        client.assert(response.body !== null);
+        client.assert(response.body.error === null);
+
         client.assert(response.body.data !== null);
         client.assert(response.body.data.hostPath !== null);
         client.assert(response.body.data.pageProfile !== null);
         client.assert(response.body.data.pageContents !== null);
-
-        client.assert(response.body.error === null);
     });
 %}
 
@@ -23,9 +24,10 @@ Content-Type: {{JSON}}
     client.test("SHOULD return error WHEN host path not found", () => {
         client.assert(response.status === 404);
 
-        client.assert(response.body.data === null);
-
+        client.assert(response.body !== null);
         client.assert(response.body.error === "user.displayPath.notFound");
+
+        client.assert(response.body.data === null);
     });
 %}
 
@@ -37,9 +39,10 @@ Content-Type: {{JSON}}
     client.test("SHOULD return error WHEN host path not found", () => {
         client.assert(response.status === 404);
 
-        client.assert(response.body.data === null);
-
+        client.assert(response.body !== null);
         client.assert(response.body.error === "page.displayPath.notFound");
+
+        client.assert(response.body.data === null);
     });
 %}
 
@@ -51,8 +54,9 @@ Content-Type: {{JSON}}
     client.test("SHOULD return error WHEN host access is not Public", () => {
         client.assert(response.status === 403);
 
-        client.assert(response.body.data === null);
-
+        client.assert(response.body !== null);
         client.assert(response.body.error === "page.access.denied");
+
+        client.assert(response.body.data === null);
     });
 %}

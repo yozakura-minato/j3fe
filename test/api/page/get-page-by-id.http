@@ -1,14 +1,15 @@
 ### getPageById_success
-GET {{HOST}}/api/v1/pages/01a04d03-d857-7542-ace1-ed3142b919e5
+GET {{HOST}}/api/v1/pages/01a06669-e82b-779f-beec-a102fde4adf3
 Content-Type: {{JSON}}
 
 > {%
     client.test("SHOULD return page data WHEN page ID is valid", () => {
         client.assert(response.status === 200);
 
-        client.assert(response.body.data !== null);
+        client.assert(response.body !== null);
         client.assert(response.body.error === null);
 
+        client.assert(response.body.data !== null);
         client.assert(response.body.data.hostPath !== null);
         client.assert(response.body.data.pageProfile !== null);
         client.assert(response.body.data.pageContents !== null);
@@ -23,8 +24,9 @@ Content-Type: {{JSON}}
     client.test("SHOULD return error WHEN page ID does not exists", () => {
         client.assert(response.status === 404);
 
-        client.assert(response.body.data === null);
-
+        client.assert(response.body !== null);
         client.assert(response.body.error === "page.id.notFound");
+
+        client.assert(response.body.data === null);
     })
 %}

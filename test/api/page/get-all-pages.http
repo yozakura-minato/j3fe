@@ -3,14 +3,15 @@ GET {{HOST}}/api/v1/pages/all
 Content-Type: {{JSON}}
 
 > {%
- client.test("SHOULD return all page data WHEN called", () => {
-     client.assert(response.status === 200);
+    client.test("SHOULD return all page data WHEN called", () => {
+        client.assert(response.status === 200);
 
-     client.assert(response.body.data !== null);
-     client.assert(response.body.data.hostPath !== null);
-     client.assert(response.body.data.pageProfiles !== null);
-     client.assert(response.body.data.fistPageContents !== null);
+        client.assert(response.body !== null);
+        client.assert(response.body.error === null);
 
-     client.assert(response.body.error === null);
- });
- %}
+        client.assert(response.body.data !== null);
+        client.assert(response.body.data.hostPath !== null);
+        client.assert(response.body.data.pageProfiles !== null);
+        client.assert(response.body.data.fistPageContents !== null);
+    });
+%}
