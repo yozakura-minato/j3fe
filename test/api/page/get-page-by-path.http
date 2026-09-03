@@ -1,5 +1,5 @@
 ### getPageByPath_success
-GET {{HOST}}/api/v1/pages?host=system&page=test-path
+GET {{HOST}}/api/v1/pages?host=user&page=test-path
 Content-Type: {{JSON}}
 
 > {%
@@ -32,7 +32,7 @@ Content-Type: {{JSON}}
 %}
 
 ### getPageByPath_pagePathNotFound
-GET {{HOST}}/api/v1/pages?host=system&page=not-found
+GET {{HOST}}/api/v1/pages?host=user&page=not-found
 Content-Type: {{JSON}}
 
 > {%
@@ -47,7 +47,7 @@ Content-Type: {{JSON}}
 %}
 
 ### getPageByPath_pageAccessIsNotPublic
-GET {{HOST}}/api/v1/pages?host=system&page=private
+GET {{HOST}}/api/v1/pages?host=user&page=private
 Content-Type: {{JSON}}
 
 > {%
