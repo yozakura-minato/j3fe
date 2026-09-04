@@ -1,5 +1,6 @@
 ### updatePage_success
-POST {{HOST}}/api/v1/pages/01a06669-e82b-779f-beec-a102fde4adf3
+POST {{HOST}}/api/v1
+    /pages/01a06669-e82b-779f-beec-a102fde4adf3
 Content-Type: {{JSON}}
 
 {
@@ -18,7 +19,8 @@ Content-Type: {{JSON}}
 %}
 
 ### updatePage_pageIdNotFound
-POST {{HOST}}/api/v1/pages/{{BAD_UUID}}
+POST {{HOST}}/api/v1
+    /pages/{{BAD_UUID}}
 Content-Type: {{JSON}}
 
 {

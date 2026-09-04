@@ -1,5 +1,6 @@
 ### getAllPages_success
-GET {{HOST}}/api/v1/pages/all
+GET {{HOST}}/api/v1
+    /pages/all
 Content-Type: {{JSON}}
 
 > {%

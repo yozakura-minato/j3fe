@@ -1,5 +1,6 @@
 ### createPage_success
-POST {{HOST}}/api/v1/pages
+POST {{HOST}}/api/v1
+    /pages
 Content-Type: {{JSON}}
 
 {
@@ -18,7 +19,8 @@ Content-Type: {{JSON}}
 %}
 
 ### createPage_displayPathConflict
-POST {{HOST}}/api/v1/pages
+POST {{HOST}}/api/v1
+    /pages
 Content-Type: {{JSON}}
 
 {

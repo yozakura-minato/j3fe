@@ -1,5 +1,6 @@
 ### getPageById_success
-GET {{HOST}}/api/v1/pages/01a06669-e82b-779f-beec-a102fde4adf3
+GET {{HOST}}/api/v1
+    /pages/01a06669-e82b-779f-beec-a102fde4adf3
 Content-Type: {{JSON}}
 
 > {%
@@ -17,7 +18,8 @@ Content-Type: {{JSON}}
 %}
 
 ### getPageById_pageProfileNotFound
-GET {{HOST}}/api/v1/pages/{{BAD_UUID}}
+GET {{HOST}}/api/v1
+    /pages/{{BAD_UUID}}
 Content-Type: {{JSON}}
 
 > {%
