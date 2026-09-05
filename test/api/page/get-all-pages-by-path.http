@@ -1,0 +1,33 @@
+### getAllPagesByPath_success
+GET {{HOST}}/api/v1
+    /pages/all/public?host=user
+Content-Type: {{JSON}}
+
+> {%
+    client.test("SHOULD return data WHEN host is valid", () => {
+        client.assert(response.status === 200);
+
+        client.assert(response.body !== null);
+        client.assert(response.body.error === null);
+
+        client.assert(response.body.data !== null);
+        client.assert(response.body.hostPath !== null);
+        client.assert(response.body.pageProfiles !== null);
+    });
+%}
+
+### getAllPagesByPath_hostPathNotFound
+GET {{HOST}}/api/v1
+    /pages/all/public?host=not-found
+Content-Type: {{JSON}}
+
+> {%
+    client.test("SHOULD return error WHEN host is not found", () => {
+        client.assert(response.status === 404);
+
+        client.assert(response.body !== null);
+        client.assert(response.body.error === "user.displayPath.notFound");
+
+        client.assert(response.body.data === null);
+    });
+%}
