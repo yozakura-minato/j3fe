@@ -1,0 +1,14 @@
+import type { PageServerLoad } from '../../../../.svelte-kit/types/src/routes/test/$types';
+import { Api } from '$lib/ky/api.js';
+import type { ApiResponse } from '$lib/type/type.js';
+import type { PageProfileResponse } from './type.ts';
+
+export const load: PageServerLoad = async ({ params, setHeaders }) => {
+	setHeaders({
+		'cache-control': 'max-age=30'
+	});
+
+	return await Api.get(`/pages/public?host=${params.hostPath}&page=${params.pagePath}`).json<
+		ApiResponse<PageProfileResponse>
+	>();
+};
