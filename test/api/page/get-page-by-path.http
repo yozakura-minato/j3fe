@@ -1,6 +1,6 @@
 ### getPageByPath_success
 GET {{HOST}}/api/v1
-    /pages?host=user&page=test-path
+    /pages/public?host=user&page=test-path
 Content-Type: {{JSON}}
 
 > {%
@@ -19,7 +19,7 @@ Content-Type: {{JSON}}
 
 ### getPageByPath_hostPathNotFound
 GET {{HOST}}/api/v1
-    /pages?host=not-found&page=test-path
+    /pages/public?host=not-found&page=test-path
 Content-Type: {{JSON}}
 
 > {%
@@ -35,7 +35,7 @@ Content-Type: {{JSON}}
 
 ### getPageByPath_pagePathNotFound
 GET {{HOST}}/api/v1
-    /pages?host=user&page=not-found
+    /pages/public?host=user&page=not-found
 Content-Type: {{JSON}}
 
 > {%
@@ -44,22 +44,6 @@ Content-Type: {{JSON}}
 
         client.assert(response.body !== null);
         client.assert(response.body.error === "page.displayPath.notFound");
-
-        client.assert(response.body.data === null);
-    });
-%}
-
-### getPageByPath_pageAccessIsNotPublic
-GET {{HOST}}/api/v1
-    /pages?host=user&page=private
-Content-Type: {{JSON}}
-
-> {%
-    client.test("SHOULD return error WHEN host access is not Public", () => {
-        client.assert(response.status === 403);
-
-        client.assert(response.body !== null);
-        client.assert(response.body.error === "page.access.denied");
 
         client.assert(response.body.data === null);
     });
